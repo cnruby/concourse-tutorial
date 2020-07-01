@@ -1,0 +1,17 @@
+---
+resources:
+  - name: resource-tutorial
+    type: git
+    source:
+      uri: https://github.com/cnruby/concourse-tutorial.git
+      branch: develop
+
+jobs:
+  - name: job-hallo-shell
+    public: true
+    plan:
+      - get: resource-tutorial
+      - task: hallo-shell
+        file: resource-tutorial/tutorials/basic/task-scripts/task_show_uname.yml
+
+# fly -t tutorial set-pipeline -c pipeline-shell.yml -p hallo-shell
