@@ -20,3 +20,5 @@ jobs:
 #3 refresh website
 #4 fly -t tutorial watch -j hello-world/job-hello-world
 #5=2+4 fly -t tutorial trigger-job -j hello-world/job-hello-world -w
+
+# fly -t tutorial destroy-pipeline -p hallo-sehll
