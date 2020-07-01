@@ -5,8 +5,9 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
 
-inputs:
-- name: task-scripts
+#inputs:
+#- name: task-scripts
 
 run:
-  path: ./task-scripts/task_show_uname.sh
+  #path: ./task-scripts/task_show_uname.sh
+  path: resource-tutorial/tutorials/basic/task-scripts/task_show_uname.sh
