@@ -11,7 +11,12 @@ jobs:
     public: true
     plan:
       - get: resource-tutorial
+        trigger: true
       - task: hello-world
         file: resource-tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
 
-# fly -t tutorial set-pipeline -c pipeline.yml -p hello-world
+#1 fly -t tutorial set-pipeline -c pipeline.yml -p hello-world
+#2 fly -t tutorial trigger-job -j hello-world/job-hello-world
+#3 refresh website
+#4 fly -t tutorial watch -j hello-world/job-hello-world
+#5=2+4 fly -t tutorial trigger-job -j hello-world/job-hello-world -w
